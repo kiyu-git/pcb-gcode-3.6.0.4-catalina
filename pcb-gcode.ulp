@@ -95,7 +95,7 @@ void preview()
 	if (SHOW_PREVIEW) {
 		switch(get_os()) {
 			case OS_MACOSX:
-			system(g_path + "/viewer/application.macosx/viewer.app/Contents/MacOS/JavaApplicationStub");
+			system(g_path + "/viewer/application.macosx/viewer.app/Contents/MacOS/viewer");
 			break;
 			case OS_LINUX:
 			system(g_path + "/source/viewer.linux.sh");

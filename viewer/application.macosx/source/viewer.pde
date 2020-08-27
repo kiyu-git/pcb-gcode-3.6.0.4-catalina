@@ -70,7 +70,7 @@ float maxy = 0;
 
 PFont metaBold;
 
-String filename = "optimize_me.txt";
+String filename = "./data/optimize_me.txt";
 
 String comment = "";
 float tool_size = 0.001;
@@ -428,4 +428,3 @@ void keyPressed() {
   background(bg_color);
   redraw();  
 }
-

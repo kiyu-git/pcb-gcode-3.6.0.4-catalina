@@ -1,16 +1,16 @@
 import processing.core.*; 
-import processing.xml.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
 
-import java.applet.*; 
-import java.awt.*; 
-import java.awt.image.*; 
-import java.awt.event.*; 
-import java.io.*; 
-import java.net.*; 
-import java.text.*; 
-import java.util.*; 
-import java.util.zip.*; 
-import java.util.regex.*; 
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
 
 public class viewer extends PApplet {
 
@@ -86,7 +86,7 @@ float maxy = 0;
 
 PFont metaBold;
 
-String filename = "optimize_me.txt";
+String filename = "./data/optimize_me.txt";
 
 String comment = "";
 float tool_size = 0.001f;
@@ -174,7 +174,7 @@ public void rtext(String s, float x, float y) {
  */
 public void setup() {
   String matches[];
-  size(800, 600);
+  
   
   String line = null;
   String[] lines = new String[1];
@@ -444,9 +444,13 @@ public void keyPressed() {
   background(bg_color);
   redraw();  
 }
-
-
-  static public void main(String args[]) {
-    PApplet.main(new String[] { "--bgcolor=#ffffff", "viewer" });
+  public void settings() {  size(800, 600); }
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "viewer" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
   }
 }
