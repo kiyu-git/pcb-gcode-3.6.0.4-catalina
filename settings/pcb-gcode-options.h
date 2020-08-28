@@ -30,5 +30,5 @@ string MILL_FILE_NAME = "mill";
 string TEXT_FILE_NAME = "text";
 string TOP_FILE_NAME = "top";
 string BOT_FILE_NAME = "bot";
-string DEFAULT_EXTENSION = "tap";
+string DEFAULT_EXTENSION = "nc";
 string DEFAULT_DRILL_FILE = "";
